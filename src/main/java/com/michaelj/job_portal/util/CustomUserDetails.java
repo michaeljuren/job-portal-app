@@ -2,7 +2,6 @@ package com.michaelj.job_portal.util;
 
 import com.michaelj.job_portal.entity.Users;
 import com.michaelj.job_portal.entity.UsersType;
-import org.hibernate.usertype.UserType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

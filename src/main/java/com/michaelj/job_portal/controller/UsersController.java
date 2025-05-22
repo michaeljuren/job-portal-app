@@ -2,7 +2,6 @@ package com.michaelj.job_portal.controller;
 
 import com.michaelj.job_portal.entity.Users;
 import com.michaelj.job_portal.entity.UsersType;
-import com.michaelj.job_portal.entity.UsersType;
 import com.michaelj.job_portal.service.UsersService;
 import com.michaelj.job_portal.service.UsersTypeService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,7 +14,6 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -55,7 +53,7 @@ public class UsersController {
           return "register";
         }
         usersService.addNewUser(user);
-        return "dashboard";
+        return "redirect:/dashboard/";
     }
 
     @GetMapping("/login")

@@ -4,7 +4,6 @@ import com.michaelj.job_portal.entity.RecruiterProfile;
 import com.michaelj.job_portal.entity.Users;
 import com.michaelj.job_portal.repository.UserRepository;
 import com.michaelj.job_portal.service.RecruiterProfileService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

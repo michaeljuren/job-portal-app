@@ -16,13 +16,13 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         String username = userDetails.getUsername();
-        System.out.println("the user" + username + "is logged in");
+        System.out.println("the user " + username + " is logged in");
         boolean hasJobSeekerRole =  authentication.getAuthorities().stream().anyMatch(authority ->
                 authority.getAuthority().equals("Job Seeker"));
         boolean hasRecruiterRole =  authentication.getAuthorities().stream().anyMatch(authority ->
                 authority.getAuthority().equals("Recruiter"));
         if(hasRecruiterRole | hasJobSeekerRole) {
-            response.sendRedirect("/dashboard");
+            response.sendRedirect("/dashboard/");
         }
 
     }
