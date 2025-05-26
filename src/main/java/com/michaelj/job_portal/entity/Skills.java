@@ -1,6 +1,7 @@
 package com.michaelj.job_portal.entity;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name = "skills")
@@ -8,7 +9,7 @@ public class Skills {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String name;
 
@@ -17,13 +18,13 @@ public class Skills {
     private String yearsOfExperience;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "job_seeker_profile_id")
+    @JoinColumn(name = "job_seeker_profile")
     private JobSeekerProfile jobSeekerProfile;
 
 
     public Skills() {}
 
-    public Skills(int id, String name, String experienceLevel, String yearsOfExperience, JobSeekerProfile jobSeekerProfile) {
+    public Skills(Integer id, String name, String experienceLevel, String yearsOfExperience, JobSeekerProfile jobSeekerProfile) {
         this.id = id;
         this.name = name;
         this.experienceLevel = experienceLevel;
@@ -31,11 +32,11 @@ public class Skills {
         this.jobSeekerProfile = jobSeekerProfile;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
