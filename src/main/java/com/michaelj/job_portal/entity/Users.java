@@ -13,8 +13,7 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private int id;
+    private int userId;
 
     @Column(unique = true)
     private String email;
@@ -34,8 +33,8 @@ public class Users {
 
     public Users() {}
 
-    public Users(int id, String email, String password, boolean isActive, Date registrationDate, UsersType userTypeId) {
-        this.id = id;
+    public Users(int userId, String email, String password, boolean isActive, Date registrationDate, UsersType userTypeId) {
+        this.userId = userId;
         this.email = email;
         this.password = password;
         this.isActive = isActive;
@@ -43,12 +42,12 @@ public class Users {
         this.userTypeId = userTypeId;
     }
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getEmail() {
@@ -94,7 +93,7 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" +
-                "id=" + id +
+                "userId=" + userId +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", isActive=" + isActive +
