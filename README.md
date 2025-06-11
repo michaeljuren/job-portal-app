@@ -1,100 +1,123 @@
+# Job Portal Web Application
 
+A modern job portal built with Java Spring Boot, featuring a RESTful API, SQL database integration, and JavaScript frontend for seamless user experience.
+
+## ✨ Features
+
+- **RESTful API** - Built with Spring Boot for robust backend services
+- **Database Integration** - SQL database support (MySQL, PostgreSQL)
+- **Interactive Frontend** - JavaScript-powered user interface
+- **Build Management** - Maven for dependency management and builds
+- **Template Engine** - Thymeleaf for server-side rendering
+- **Database Migration** - Structured SQL migration scripts
+
+## 🔧 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Java 17+** - Required for Spring Boot
+- **Maven 3.8+** - For dependency management and builds
+- **SQL Database** - MySQL, PostgreSQL, or compatible database
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/michaeljuren/job-portal-app.git
+cd job-portal
 ```
-# Project Name
 
-A Java Spring Boot application with Maven, SQL database integration, and JavaScript frontend.
+### 2. Configure Database
+Update your database settings in `src/main/resources/application.properties`:
 
-## Features
+```properties
+# Example configuration
+spring.datasource.url=jdbc:mysql://localhost:3397/job_portal
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+```
 
-- RESTful API built with Spring Boot
-- SQL database support (e.g., MySQL, PostgreSQL)
-- JavaScript frontend for UI interactions
-- Maven for dependency management and build
-
-## Prerequisites
-
-- Java 17+
-- Maven 3.8+
-- Node.js & npm (if using a JavaScript frontend)
-- SQL database (MySQL, PostgreSQL, etc.)
-
-## Getting Started
-
-1. **Clone the repository:**
-   ```
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-   ```
-
-2. **Configure the database:**
-   - Update `src/main/resources/application.properties` with your database settings.
-
-3. **Build the project:**
-   ```
+### 3. Build the Project
+```bash
 mvn clean install
-   ```
+```
 
-4. **Run the application:**
-   ```
+### 4. Run the Application
+```bash
 mvn spring-boot:run
-   ```
+```
 
-5. **(Optional) Run the frontend:**
-   ```
-cd frontend
-npm install
-npm start
-   ```
+The application will be available at `http://localhost:8080`
 
-## Project Structure
-
-- `src/main/java` - Java source code (Spring Boot)
-- `src/main/resources` - Configuration files
-- `src/main/sql` - SQL scripts
-- `frontend/` - JavaScript frontend (if present)
-
-## Running Tests
+## 📁 Project Structure
 
 ```
+job-portal/
+├── src/main/java/                    # Java source code (Spring Boot)
+├── src/main/resources/
+│   ├── db/migration/                 # Database migration scripts (SQL)
+│   ├── templates/                    # Thymeleaf templates
+│   ├── static/                       # Static assets (CSS, JS, images)
+│   └── application.properties        # Application configuration
+├── src/test/                         # Test files
+├── target/                           # Build output
+└── pom.xml                          # Maven configuration
+```
+
+## 🧪 Running Tests
+
+Execute the test suite with:
+
+```bash
 mvn test
 ```
 
-## License
+## 🚀 Deployment
 
-This project is licensed under the MIT License.
-```
-```
-## Deployment Instructions
-
-1. **Prepare the environment:**
-   - Ensure the target server has Java 17+, Maven, and a compatible SQL database installed.
-   - Install Node.js & npm if deploying the JavaScript frontend.
-
-2. **Build the application:**
-   ```
+### Production Build
+```bash
 mvn clean package
+```
+
+This generates a JAR file in the `target/` directory.
+
+### Deployment Steps
+
+1. **Environment Setup**
+    - Ensure target server has Java 17+, Maven, and SQL database
+    - Configure production database settings
+
+2. **Application Deployment**
+   ```bash
+   # Transfer JAR to server
+   scp target/job-portal-*.jar user@server:/path/to/app/
+   
+   # Run the application
+   java -jar job-portal-*.jar
    ```
 
-   This will generate a `jar` file in the `target` directory.
+3. **Production Configuration**
+   ```bash
+   # Run with production profile
+   java -jar job-portal-*.jar --spring.profiles.active=prod
+   ```
 
-3. **Configure the application:**
-   - Copy the `application.properties` file to the target server and update it with the production database settings.
+4. **Verification**
+    - Verify application is accessible via server IP/domain
+    - Check logs for any startup issues
 
-4. **Deploy the backend:**
-   - Transfer the `jar` file to the target server.
-   - Run the application using:
-     ```
-     java -jar target/your-app-name.jar
-     ```
+## 🤝 Contributing
 
-5. **Deploy the frontend (if applicable):**
-   - Build the frontend:
-     ```
-     cd frontend
-     npm run build
-     ```
-   - Copy the contents of the `dist` or `build` folder to the server's web directory.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-6. **Verify deployment:**
-   - Access the application via the server's IP or domain name.
-```
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+If you en
